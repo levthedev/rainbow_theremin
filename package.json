@@ -11,5 +11,8 @@
   "dependencies": {
     "express": "^4.13.4",
     "octavian": "^2.2.0"
+  },
+  "engines": {
+    "node": "0.12.3"
   }
 }
