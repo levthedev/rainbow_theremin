@@ -39,7 +39,6 @@ function draw() {
   fill(zColor, yColor, xColor);
   var size = randomGaussian(40, 35);
   ellipse(width - coords.x, coords.y, size, size);
-  // ellipse(mouseX, mouseY, size, size);
   osc.freq(xCord);
   console.log(yCord)
   osc.amp(height / (yCord + 0.001));
