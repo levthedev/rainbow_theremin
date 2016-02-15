@@ -1,4 +1,7 @@
-coords = {};
+coords = {
+  x: 0.1,
+  y: 0.1
+};
 
 window.onload = function() {
   var video = document.getElementById('video');
@@ -16,7 +19,6 @@ window.onload = function() {
 };
 
 var osc;
-var playing = false;
 const zColor = Math.floor((Math.random() * 255));
 
 function setup() {
@@ -36,10 +38,11 @@ function draw() {
   var yColor = yCord / (height / 255);
   fill(zColor, yColor, xColor);
   var size = randomGaussian(40, 35);
-  // ellipse(mouseX, mouseY, size, size);
   ellipse(width - coords.x, coords.y, size, size);
-  // osc.freq(xCord);
-  // osc.amp(yCord / height);
+  // ellipse(mouseX, mouseY, size, size);
+  osc.freq(xCord);
+  console.log(yCord)
+  osc.amp(height / (yCord + 0.001));
 }
 
 function mouseClicked() {
