@@ -1,0 +1,18 @@
+#video {
+  z-index: -1;
+  opacity: 0;
+}
+
+.container_row {
+    height: 0px;
+    margin: 0;
+    position: relative;
+}
+
+.layer1 {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 0px;
+}

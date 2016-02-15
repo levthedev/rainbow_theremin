@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
-    "octavian": "^2.2.0"
+    "octavian": "^2.2.0",
+    "requirejs": "^2.1.22",
+    "tracking": "^1.1.2"
   },
   "engines": {
     "node": "0.12.3"
