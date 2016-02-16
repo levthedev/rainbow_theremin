@@ -1,6 +1,7 @@
 coords = {
-  x: 0.1,
-  y: 0.1
+  x: window.innerWidth,
+  y: window.innerHeight,
+  area: 1
 };
 
 window.onload = function() {
@@ -12,6 +13,8 @@ window.onload = function() {
   tracking.track('#video', tracker, { camera: true });
   tracker.on('track', function(event) {
     event.data.forEach(function(rect) {
+      var area = (rect.height * rect.width) / (window.innerHeight * window.innerWidth);
+      coords.area = area * 1000;
       coords.x = rect.x;
       coords.y = rect.y;
     });
@@ -19,14 +22,14 @@ window.onload = function() {
 };
 
 var osc;
-const zColor = Math.floor((Math.random() * 255));
+var zColor = Math.floor((Math.random() * 255));
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   noStroke();
   osc = new p5.Oscillator();
   osc.setType('sine');
-  osc.freq(240);
+  osc.freq(50);
   osc.amp(0);
   osc.start();
 }
@@ -38,9 +41,8 @@ function draw() {
   var yColor = yCord / (height / 255);
   fill(zColor, yColor, xColor);
   var size = randomGaussian(40, 35);
-  ellipse(width - coords.x, coords.y, size, size);
+  ellipse(width - coords.x, coords.y, coords.area, coords.area);
   osc.freq(xCord);
-  console.log(yCord)
   osc.amp(height / (yCord + 0.001));
 }
 
@@ -48,5 +50,6 @@ function mouseClicked() {
   rgb1 = Math.floor((Math.random() * 255));
   rgb2 = Math.floor((Math.random() * 255));
   rgb3 = Math.floor((Math.random() * 255));
+  zColor = Math.floor((Math.random() * 255));
   background(rgb1, rgb2, rgb3);
 }
