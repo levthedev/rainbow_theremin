@@ -1,3 +1,15 @@
+.main {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 0px;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    margin: 1em;
+    font-family: courier;
+}
+
 #video {
   z-index: -1;
   opacity: 0;
@@ -7,10 +19,82 @@
   z-index: 10;
 }
 
-.main {
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 0px;
+#controls {
+  font-size: 1.5em;
+}
+
+input[type="text"] {
+  opacity: 0.75;
+  width: 10%;
+  font-family: courier;
+  font-size: 18px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+input[type="text"]:focus, input[type="text"].focus {
+  border: solid 1px #707070;
+}
+
+.cmn-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.cmn-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.cmn-toggle-round + label {
+  padding: 1px;
+  width: 60px;
+  height: 30px;
+  background-color: #dddddd;
+  border-radius: 60px;
+}
+
+input.cmn-toggle-round + label:before,
+input.cmn-toggle-round + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+
+input.cmn-toggle-round + label:before {
+  right: 1px;
+  background-color: #f1f1f1;
+  border-radius: 30px;
+  transition: background 0.4s;
+}
+
+input.cmn-toggle-round + label:after {
+  width: 29px;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 1px 2.5px rgba(0, 0, 0, 0.3);
+  transition: margin 0.4s;
+}
+
+input.cmn-toggle-round:checked + label:before {
+  background-color: #8ce196;
+}
+
+input.cmn-toggle-round:checked + label:after {
+  margin-left: 30px;
 }

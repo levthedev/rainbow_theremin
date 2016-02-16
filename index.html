@@ -13,8 +13,23 @@
   </head>
   <body>
     <div class="main">
-      <input id="colorPicker" type="text" value="magenta"/>
-      <input id="rainbowBoolean" type="checkbox" value="unchecked"/>
+      <span id="controls">
+        color picker
+        <br>
+        <input id="colorPicker" type="text" value="cyan"/>
+        <br><br>
+        rainbow toggle
+        <div class="switch">
+        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round rainbowBoolean" type="checkbox" value="unchecked">
+        <label for="cmn-toggle-1"></label>
+        </div>
+        <br>
+      </span>
+      <strong>controls</strong>
+      <br>
+      wave something magenta around!
+      <br>
+      (press enter to restart)
       <video id="video" width="500" height="500" preload autoplay loop muted controls></video>
     </div>
   </body>

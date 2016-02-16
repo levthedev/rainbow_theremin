@@ -17,11 +17,11 @@ function draw() {
   xCord = width - coords.x;
   yCord = coords.y;
   osc.freq(xCord);
-  osc.amp(height / (yCord + 0.001));
+  osc.amp((height / (yCord + 0.001) - 1));
 };
 
 function drawEllipse() {
-  var rainbow = document.getElementById("rainbowBoolean").checked
+  var rainbow = document.getElementsByClassName("rainbowBoolean")[0].checked;
   rainbow ? drawRainbowEllipse() : drawPaintEllipse()
 }
 
@@ -35,10 +35,10 @@ function drawRainbowEllipse() {
 
 function drawPaintEllipse() {
   var color = document.getElementById("colorPicker").value.toLowerCase();
-  var hex = colorNameToHex(color)
+  var hex = colorNameToHex(color);
   var rgb = [255, 0, 255];
   if (hex) rgb = unhex(hex.substr(1).match(/(.{1,2})/g));
-  fill(rgb[0], rgb[1], rgb[2])
+  fill(rgb[0], rgb[1], rgb[2]);
   ellipse(width - coords.x, coords.y, coords.area, coords.area);
 }
 
@@ -52,7 +52,7 @@ function createOscillator() {
 
 function keyPressed() {
   if (keyCode === ENTER) {
-    zColor = randomRGB()
+    zColor = randomRGB();
     background(randomRGB(), randomRGB(), randomRGB());
   }
 };
