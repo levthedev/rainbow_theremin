@@ -53,7 +53,12 @@ function createOscillator() {
 function keyPressed() {
   if (keyCode === ENTER) {
     zColor = randomRGB();
-    background(randomRGB(), randomRGB(), randomRGB());
+    r = randomRGB();
+    g = randomRGB();
+    b = randomRGB();
+    var rgb = `rgb(${r},${g},${b})`;
+    document.body.style.backgroundColor = rgb;
+    background(r, g, b);
   }
 };
 
