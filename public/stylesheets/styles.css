@@ -3,13 +3,11 @@
   opacity: 0;
 }
 
-.container_row {
-    height: 0px;
-    margin: 0;
-    position: relative;
+#colorPicker {
+  z-index: 10;
 }
 
-.layer1 {
+.main {
     position: absolute;
     z-index: 1;
     left: 0;

@@ -2,15 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>title</title>
+    <title>Rainbow Theremin</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.22/p5.js"></script>
-    <script src="./scripts/p5.sound.min.js"></script>
-    <script src="./scripts/tracking.js"></script>
-    <script src="./scripts/piano.js"></script>
+    <script src="./javascripts/p5.sound.min.js"></script>
+    <script src="./javascripts/tracking.js"></script>
+    <script src="./javascripts/util.js"></script>
+    <script src="./javascripts/video.js"></script>
+    <script src="./javascripts/piano.js"></script>
     <link rel="stylesheet" href="/stylesheets/styles.css">
   </head>
   <body>
-    <div class="layer1">
+    <div class="main">
+      <input id="colorPicker" type="text" value="magenta"/>
+      <input id="rainbowBoolean" type="checkbox" value="unchecked"/>
       <video id="video" width="500" height="500" preload autoplay loop muted controls></video>
     </div>
   </body>
