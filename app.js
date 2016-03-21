@@ -9,7 +9,7 @@ app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
 app.get('*', function (req, res, next) {
   if (req.headers['x-forwarded-proto'] != 'https' && env != "development")
-    res.redirect('https://colorsynth.herokuapp.com' + req.url);
+    res.redirect('https://rainbowtheremin.herokuapp.com' + req.url);
   else
     next();
 })
